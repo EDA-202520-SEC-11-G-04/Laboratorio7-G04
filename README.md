@@ -26,9 +26,9 @@ Este repositorio forma parte del marco docente de estructura de datos y algoritm
 
 Los estudiantes editan esta sección para agregar sus nombres, correos electrónicos de Uniandes y especificar qué funcionalidad de proyecto implementarán.
 
-1. Nombre del estudiante No. 1, Correo electrónico del estudiante No. 1 Uniandes, Funcionalidad propiedad del estudiante No. 1.
-1. Nombre del estudiante No. 2, Correo electrónico del estudiante No. 2 Uniandes, Funcionalidad propiedad del estudiante No. 2.
-1. Nombre del estudiante No. 3, Correo electrónico del estudiante No. 3 Uniandes, Funcionalidad propiedad del estudiante No. 3.
+1. Bastien Quentin Clement b.thirion@uniandes.edu.co
+2. Jonathan David Galeano Sosa j.galeanos@uniandes.edu.co.
+3. Bastien Quentin Clement b.thirion@uniandes.edu.co
 
 [Volver al inicio](#laboratorio-7)
 
@@ -162,3 +162,4 @@ Este programa se distribuye con la esperanza de que sea útil, pero SIN NINGUNA 
 [laboratorio-7-issues-url]: https://github.com/ISIS1225DEVS/ISIS1225-laboratorio-7/issues
 [contributors-shield]: https://img.shields.io/github/contributors/ISIS1225DEVS/ISIS1225-Lib.svg?style=for-the-badge
 [BrightSpace-url]: https://bloqueneon.uniandes.edu.co/d2l/home
+
