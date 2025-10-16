@@ -176,3 +176,40 @@ def test_rehash():
 
     for i in range(5):
         assert mp.contains(map, i)
+        
+@handle_not_implemented
+def is_empty(my_map):
+    """
+    Retorna True si el mapa está vacío (size == 0), False en caso contrario.
+    """
+    return my_map["size"] == 0
+
+@handle_not_implemented
+def key_set(my_map):
+    """
+    Retorna una lista (array_list) con todas las llaves del mapa.
+    No incluye celdas vacías ni eliminadas.
+    """
+    keys = lt.new_list()
+    for i in range(my_map["capacity"]):
+        entry = lt.get_element(my_map["table"], i)
+        key = me.get_key(entry)
+        if key is not None and key != "__EMPTY__":
+            lt.add_last(keys, key)
+    return keys
+
+@handle_not_implemented
+def value_set(my_map):
+    """
+    Retorna una lista (array_list) con todos los valores del mapa.
+    No incluye celdas vacías ni eliminadas.
+    """
+    values = lt.new_list()
+    for i in range(my_map["capacity"]):
+        entry = lt.get_element(my_map["table"], i)
+        key = me.get_key(entry)
+        if key is not None and key != "__EMPTY__":
+            val = me.get_value(entry)
+            lt.add_last(values, val)
+    return values
+

@@ -27,6 +27,7 @@
 import os
 import csv
 import datetime
+from DataStructures.Tree import binary_search_tree as bst
 
 # TODO Realice la importación del Árbol Binario Ordenado
 # TODO Realice la importación de ArrayList (al) como estructura de datos auxiliar para sus requerimientos
