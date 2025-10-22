@@ -69,7 +69,7 @@ def main():
     """
     # bandera para controlar el ciclo del menu
     working = True
-    crimefile = 'Boston Crimes//crime-utf8.csv'
+    crimefile = 'crime-utf8.csv'
 
     # ciclo del menu
     while working:
@@ -88,6 +88,7 @@ def main():
             print('Elementos en el arbol: ' + str(logic.index_size(control)))
             print('Menor Llave: ' + str(logic.min_key(control)))
             print('Mayor Llave: ' + str(logic.max_key(control)))
+
 
         elif int(inputs[0]) == 3:
             print("\nBuscando crimenes en un rango de fechas: ")

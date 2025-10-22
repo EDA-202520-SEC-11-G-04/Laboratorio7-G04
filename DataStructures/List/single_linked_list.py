@@ -41,7 +41,7 @@ def add_first(my_list,element):
     my_list["size"] += 1
     return my_list
 
-def add_last(my_list,element):
+def add_last(my_list, element):
     new_node = {"info": element, "next": None}
 
     if my_list["size"] == 0:  # si la liste est vide
@@ -49,8 +49,10 @@ def add_last(my_list,element):
         my_list["last"] = new_node
     else:  # si déjà des éléments
         my_list["last"]["next"] = new_node
+        my_list["last"] = new_node  # <- Important !
     my_list["size"] += 1
     return my_list
+
 
 def size(my_list):
     return my_list["size"]
