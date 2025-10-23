@@ -67,9 +67,9 @@ def main():
     """
     Menú principal
     """
-    # bandera para controlar el ciclo del menu
     working = True
     crimefile = 'crime-utf8.csv'
+    control = None
 
     # ciclo del menu
     while working:
@@ -81,31 +81,42 @@ def main():
             # cont es el controlador que se usará de acá en adelante
             control = new_logic()
         elif int(inputs[0]) == 2:
-            print("\nCargando información de crimenes ....")
-            logic.load_data(control, crimefile)
-            print('Crimenes cargados: ' + str(logic.crimes_size(control)))
-            print('Altura del arbol: ' + str(logic.index_height(control)))
-            print('Elementos en el arbol: ' + str(logic.index_size(control)))
-            print('Menor Llave: ' + str(logic.min_key(control)))
-            print('Mayor Llave: ' + str(logic.max_key(control)))
+            if control is None:
+                print("Debe inicializar primero el analizador")
+            else:
+                print("\nCargando información de crimenes ....")
+                logic.load_data(control, crimefile)
+                print('Crimenes cargados: ' + str(logic.crimes_size(control)))
+                print('Altura del arbol: ' + str(logic.index_height(control)))
+                print('Elementos en el arbol: ' + str(logic.index_size(control)))
+                print('Menor Llave: ' + str(logic.min_key(control)))
+                print('Mayor Llave: ' + str(logic.max_key(control)))
 
 
         elif int(inputs[0]) == 3:
-            print("\nBuscando crimenes en un rango de fechas: ")
-            initialDate = input("Fecha Inicial (YYYY-MM-DD): ")
-            finalDate = input("Fecha Final (YYYY-MM-DD): ")
-            total = logic.get_crimes_by_range(control, initialDate, finalDate)
-            print("\nTotal de crimenes en el rango de fechas: " + str(total))
+            if control is None:
+                print("Debe inicializar y cargar datos primero")
+            else:
+                print("\nBuscando crimenes en un rango de fechas: ")
+                initialDate = input("Fecha Inicial (YYYY-MM-DD): ")
+                finalDate = input("Fecha Final (YYYY-MM-DD): ")
+                total = logic.get_crimes_by_range(control, initialDate, finalDate)
+                print("\nTotal de crimenes en el rango de fechas: " + str(total))
 
         elif int(inputs[0]) == 4:
-            print("\nBuscando crimenes x grupo de ofensa en una fecha: ")
-            initialDate = input("Fecha (YYYY-MM-DD): ")
-            offensecode = input("Ofensa: ")
-            numoffenses = logic.get_crimes_by_range_code(control, initialDate,
-                                                        offensecode)
-            print("\nTotal de ofensas tipo: " + offensecode + " en esa fecha:  " +
-                str(numoffenses))
+            if control is None:
+                print("Debe inicializar y cargar datos primero")
+            else:
+                print("\nBuscando crimenes x grupo de ofensa en una fecha: ")
+                initialDate = input("Fecha (YYYY-MM-DD): ")
+                offensecode = input("Ofensa: ")
+                numoffenses = logic.get_crimes_by_range_code(control, initialDate, offensecode)
+                print("\nTotal de ofensas tipo: " + offensecode + " en esa fecha:  " + str(numoffenses))
 
+        elif int(inputs[0]) == 0:
+            print("Saliendo del programa...")
+            working = False
         else:
-            sys.exit(0)
+            print("Opción no válida")
+
     sys.exit(0)
